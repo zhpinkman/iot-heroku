@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <div class="loading">
+    <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+  </div>
+  <div class="container">
+    <div class="login-logo">login</div>
+    <div method="POST" action="/user/login" class="inputs">
+      <div class="static-parts">
+        <div class="group-name form-part">
+          <div class="input-icon">
+            <i class="fa fa-users fa-2x" aria-hidden="true"></i>
+          </div>
+          <div class="input-part">
+            <input name="username" type="text" class="group-name-input" placeholder="group name" />
+          </div>
+        </div>
+        <div class="password form-part">
+          <div class="input-icon">
+            <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
+          </div>
+          <div class="input-part">
+            <input name="password" type="password" class="password-input" placeholder="password" />
+          </div>
+          <div class="input-icon eye-icon clickable" onclick="togglePass()">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="login-button" onclick="login()">
+      <button class="login-btn clickable">login</button>
+    </div>
+    <div class="signup">don't have an accoun yet ?? <a href="/user/signup">signup</a></div>
+  </div>
+</body>
+<script src="javascripts/main.js"></script>
+</html>

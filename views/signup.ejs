@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>signup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/signup.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="signup-logo">SIGNUP</div>
+      <form method="POST" action="/user/signup" class="inputs">
+        <div class="static-parts">
+          <div class="group-name form-part">
+            <div class="input-icon">
+              <i class="fa fa-users fa-2x" aria-hidden="true"></i>
+            </div>
+            <div class="input-part">
+              <input
+                type="text"
+                class="group-name-input"
+                placeholder="group name"
+                name="username"
+              />
+            </div>
+          </div>
+          <div class="thing-speak form-part">
+            <div class="input-icon">
+              <i class="fa fa-thermometer-empty fa-2x" aria-hidden="true"></i>
+            </div>
+            <div class="input-part">
+              <input
+                type="text"
+                class="thing-speak-input"
+                placeholder="thing speak channel"
+                name="channelId"
+              />
+            </div>
+          </div>
+          <div class="password form-part">
+            <div class="input-icon">
+              <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
+            </div>
+            <div class="input-part">
+              <input
+                type="password"
+                class="password-input"
+                placeholder="password"
+                name="password"
+              />
+            </div>
+            <div class="input-icon eye-icon clickable" onclick="togglePass()">
+              <i class="fa fa-eye" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="dynamic-parts">
+          <div class="member-name form-part">
+            <div class="input-icon">
+              <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+            </div>
+            <div class="input-part">
+              <input
+                type="text"
+                class="member-name-input"
+                placeholder="member name"
+                id="member-field"
+              />
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="add-member clickable" onclick="addMember()">+</div>
+      <div class="signup-button">
+        <button class="signup-btn clickable">signup</button>
+      </div>
+      <div class="login">already have an acount ?? <a href="/user/login">login</a></div>
+    </div>
+  </body>
+  <script src="/public/javascripts/main.js"></script>
+  <script>
+    function togglePass() {
+      var el = document.querySelector('.eye-icon');
+      console.log(el);
+      el = el.firstElementChild;
+      console.log(el);
+      if (el.style.color == "black") {
+          el.style.color = "darkgrey";
+      } else {
+          el.style.color = "black";
+      }
+      el = document.querySelector(".password-input")
+      if (el.type === "password") {
+          el.type = "text";
+      } else {
+          el.type = "password";
+      }
+  }
+
+  function addMember() {
+      var members = document.querySelector(".dynamic-parts");
+      console.log(members);
+      members.appendChild(clone);
+  }
+</script>
+</html>
